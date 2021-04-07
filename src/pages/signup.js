@@ -39,6 +39,7 @@ export default function SignUp() {
                     followers: [],
                     dateCreated: Date.now()
                 })
+                history.push(ROUTES.DASHBOARD)
             } catch (error) {
                 setFullName('')
                 setEmailAddress('')
