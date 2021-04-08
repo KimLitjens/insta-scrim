@@ -1,5 +1,9 @@
 import React from 'react';
+import useUser from '../../hooks/use-user'
 
 export default function Sidebar() {
-    return (<p>I'm the sidebar</p>);
+    const { user: { docId, userId, following, username, fullName } = {} } = useUser()
+    return (
+        <p>something</p>
+    );
 }

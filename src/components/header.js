@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import * as ROUTES from '../constants/routes'
 import FirebaseContext from '../context/firebase'
+import userContext from '../context/user'
 
 export default function Header() {
     const { firebase } = useContext(FirebaseContext)
-    const user = {
-        displayName: "Karl"
-    }
+    const { user } = useContext(userContext)
 
     return (
         <header className="h-16 bg-white border-b mb-8">
