@@ -10,7 +10,7 @@ export default function Timeline() {
             {!photos ? (
                 <Skeleton count={4} width={640} height={500} className="mb-5" />
             ) : (
-                    <p className="text-center text-2xl">Follow people to see photos!</p>
+                    photos.map((content) => <p key={content.docId}>{content.username}</p>)
                 )}
         </div>
     );
