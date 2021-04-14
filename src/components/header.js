@@ -7,6 +7,7 @@ import userContext from '../context/user'
 export default function Header() {
     const { firebase } = useContext(FirebaseContext)
     const { user } = useContext(userContext)
+    console.log("🚀 ~ file: header.js ~ line 10 ~ Header ~ user", user)
 
     return (
         <header className="h-16 bg-white border-b mb-8">
@@ -64,7 +65,7 @@ export default function Header() {
                                         <img
                                             className="rounded-full h-8 w-8 mx-1 flex"
                                             src={`/images/avatars/${user.displayName}.jpg`}
-                                            alt={`${user.displayName} profile picture`}
+                                            alt={`${user.displayName} profile`}
                                         />
                                     </Link>
                                 </div>
