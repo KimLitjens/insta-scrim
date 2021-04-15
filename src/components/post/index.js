@@ -14,13 +14,20 @@ export default function Post({ content }) {
         <div className="rounded col-span-4 border bg-white-100 mb-16">
             <Header username={content.username} />
             <Image src={content.imageSrc} caption={content.caption} />
-            <Footer username={content.username} caption={content.caption} />
             <Actions
                 docId={content.docId}
                 totalLikes={content.likes.length}
                 likedPhoto={content.userLikedPhoto}
                 handleFocus={handleFocus}
             />
+            <Footer username={content.username} caption={content.caption} />
+            <Comments
+                docId={content.docId}
+                comments={content.comments}
+                posted={content.dateCreated}
+                commentInput={commentInput}
+            />
+
         </div>
     )
 }
