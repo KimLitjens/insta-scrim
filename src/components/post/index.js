@@ -11,7 +11,7 @@ export default function Post({ content }) {
     const handleFocus = () => commentInput.current.focus()
 
     return (
-        <div className="rounded col-span-4 border bg-white-100 mb-16">
+        <div className="rounded col-span-4 border bg-white mb-16">
             <Header username={content.username} />
             <Image src={content.imageSrc} caption={content.caption} />
             <Actions
