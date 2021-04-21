@@ -8,14 +8,14 @@ const Suggestions = ({ userId }) => {
         {
             docId: '1',
             userDocId: 1,
-            username: 'henk',
+            username: 'Henk',
             profileId: '2',
             userId: '3'
         },
         {
             docId: '2',
             userDocId: 1,
-            username: 'bart',
+            username: 'Dali',
             profileId: '2',
             userId: '3'
         }
@@ -34,16 +34,21 @@ const Suggestions = ({ userId }) => {
     return !profiles ? (
         <Skelton count={1} height={150} className="mt-5" />
     ) : profiles.length > 0 ? (
-        <div className="grid">
-            {profiles.map((profile) => (
-                < SuggestedProfile
-                    key={profile.docId}
-                    userDocId={profile.docId}
-                    username={profile.username}
-                    profileId={profile.userId}
-                    userId={userId}
-                />
-            ))}
+        <div className="flex flex-col">
+            <div className="flex items-center align-items justify-between mb-2">
+                <p className="font-bold text-sm">Suggestions for you</p>
+            </div>
+            <div className="grid gap-4 mt-4">
+                {profiles.map((profile) => (
+                    < SuggestedProfile
+                        key={profile.docId}
+                        userDocId={profile.docId}
+                        username={profile.username}
+                        profileId={profile.userId}
+                        userId={userId}
+                    />
+                ))}
+            </div>
         </div>
     ) : null;
 }
