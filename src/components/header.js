@@ -7,7 +7,6 @@ import userContext from '../context/user'
 export default function Header() {
     const { firebase } = useContext(FirebaseContext)
     const { user } = useContext(userContext)
-    console.log("🚀 ~ file: header.js ~ line 10 ~ Header ~ user", user)
 
     return (
         <header className="h-16 bg-white border-b mb-8">
