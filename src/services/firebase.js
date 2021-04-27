@@ -1,5 +1,19 @@
 import { firebase, FieldValue } from '../lib/firebaseconfig';
 
+export async function isUserFollowingProfile(activeUsername, profileUserId) {
+    const result = await firebase
+        .firestore()
+        .collection('users')
+        .where('username', '==', activeUsername)
+        .where('following', 'array-contains', profileUserId)
+        .get()
+
+    const [response = {}] = result.docs.map((item) => ({
+        ...item.data(),
+        docId: item.id
+    }))
+}
+
 export async function doesUsernameExist(username) {
     const result = await firebase
         .firestore()
