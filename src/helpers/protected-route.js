@@ -7,7 +7,6 @@ export default function ProtectedRoute({ user, children, ...rest }) {
         <Route
             {...rest}
             render={({ location }) => {
-                console.log("🚀 ~ file: protected-route.js ~ line 10 ~ ProtectedRoute ~ location", location)
                 if (user) {
                     return children;
                 }

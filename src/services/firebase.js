@@ -12,6 +12,7 @@ export async function isUserFollowingProfile(activeUsername, profileUserId) {
         ...item.data(),
         docId: item.id
     }))
+    return !!response.fullName;
 }
 
 export async function doesUsernameExist(username) {
